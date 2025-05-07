@@ -25,7 +25,7 @@ class ArticulosController < ApplicationController
 
     respond_to do |format|
       if @articulo.save
-        format.html { redirect_to @articulo, notice: "Articulo was successfully created." }
+        format.html { redirect_to @articulo, notice: "Articulo fue creado exitosamente." }
         format.json { render :show, status: :created, location: @articulo }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class ArticulosController < ApplicationController
   def update
     respond_to do |format|
       if @articulo.update(articulo_params)
-        format.html { redirect_to @articulo, notice: "Articulo was successfully updated." }
+        format.html { redirect_to @articulo, notice: "Articulo fue modificado exitosamente." }
         format.json { render :show, status: :ok, location: @articulo }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +52,7 @@ class ArticulosController < ApplicationController
     @articulo.destroy!
 
     respond_to do |format|
-      format.html { redirect_to articulos_path, status: :see_other, notice: "Articulo was successfully destroyed." }
+      format.html { redirect_to articulos_path, status: :see_other, notice: "Articulo fue destruido exitosamente." }
       format.json { head :no_content }
     end
   end
