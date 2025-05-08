@@ -14,4 +14,9 @@
     <%= articulo.autor %>
   </p>
 
+  <p>
+    <strong>Publicado el:</strong>
+    <%= articulo.created_at.strftime("%d/%m/%Y %H:%M") %>
+  </p>
+
 </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_05_07_235555) do
+ActiveRecord::Schema[8.0].define(version: 2025_05_08_164750) do
   create_table "articulos", force: :cascade do |t|
     t.string "titulo"
     t.text "contenido"
@@ -18,4 +18,14 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_07_235555) do
     t.datetime "updated_at", null: false
     t.string "autor"
   end
+
+  create_table "comentarios", force: :cascade do |t|
+    t.integer "articulo_id", null: false
+    t.text "comentario"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["articulo_id"], name: "index_comentarios_on_articulo_id"
+  end
+
+  add_foreign_key "comentarios", "articulos"
 end

@@ -7,4 +7,14 @@
   <%= link_to "Regresar a articulos", articulos_path %>
 
   <%= button_to "Eliminar este articulo", @articulo, method: :delete %>
+
+</div>
+
+<h2>Comentarios</h2>
+  
+<%= render @articulo.comentarios %>
+
+<div>
+  <h3>Agregar un comentario:</h3>
+  <%= render "comentarios/form", articulo: @articulo, comentario: Comentario.new %>
 </div>
