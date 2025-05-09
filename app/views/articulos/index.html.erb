@@ -4,13 +4,15 @@
 
 <h1>Articulos</h1>
 
+<h2><%= link_to "Nuevo articulo", new_articulo_path %></h2>
+
 <div id="articulos">
   <% @articulos.each do |articulo| %>
-    <%= render articulo %>
-    <p>
-      <%= link_to "Mostrar articulo", articulo %>
-    </p>
-  <% end %>
-</div>
+  <h2><%= link_to articulo.titulo, articulo_path(articulo) %></h2>
+  <p><strong>Autor:</strong> <%= articulo.autor %></p>
+  <p><strong>Publicado el:</strong> <%= articulo.created_at.strftime("%d/%m/%Y %H:%M") %></p>
+  <p><strong>Comentarios:</strong> <%= articulo.comentarios.count %></p>
+  <hr>
+<% end %>
 
-<%= link_to "Nuevo articulo", new_articulo_path %>
+</div>
